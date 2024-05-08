@@ -1,0 +1,73 @@
+/* External CSS */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffbb;
+    color: #fff;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .text-container {
+    position: relative;
+    width: 100vw; /* Use viewport width */
+    height: 100vh; /* Use viewport height */
+    overflow: hidden; /* Ensure content within the viewport */
+  }
+  
+  .text {
+    display: inline-block;
+    opacity: 0;
+    animation: fadein 1s ease-out forwards;
+    position: absolute;
+    padding: 10px; /* Adjust padding as needed */
+  }
+  
+  @keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .text1 {
+    font-size: 39px;
+    line-height: 1.1em;
+    font-family: 'artesanias';
+    color: black;
+    max-width: 28%; /* maximum width */
+    margin: 0 auto; 
+    text-align: center; /* center text */
+    position: relative; /* Add this */
+  }
+
+  .corner-image {
+    position: fixed;
+    width: 100px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .top-left {
+    top: 0;
+    left: 0;
+    width: 20%;
+  }
+  
+  .top-right {
+    top: 0;
+    right: 0;
+    width: 22%;
+
+  }
+  
+  .bottom-left {
+    bottom: 0;
+    left: 0;
+    width: 23%;
+  }
+  
+  .bottom-right {
+    bottom: 0px;
+    right: 0px;
+    width: 22%;
+  }
+  
+  
