@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>invitation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black; /* Background color should be black */
+            position: relative; /* Added for positioning */
+        }
+
+        .small-image {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 30px;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        img {
+            max-width: 90%;
+            max-height: 90vh;
+        }
+
+        #overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25px;
+            text-align: left;
+            display: none;
+            mix-blend-mode: difference;
+            width: 70vw; /* Adjust the width as needed */
+            overflow-y: auto; /* Enable vertical scrolling */
+            max-height: 80vh; /* Limit the maximum height */
+            padding: 20px; /* Add padding to prevent content from touching edges */
+            background-color: rgba(0, 0, 0, 0.5); /* Add transparent background */
+            border-radius: 10px; /* Add rounded corners */
+        }
+
+        .scrollable {
+            overflow: hidden; /* Hide overflow when text is not displayed */
+        }
+
+        @media screen and (max-width: 768px) {
+            img {
+                max-width: 100vw; /* Adjust the width as needed */
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="images/menu.png" alt="Small Image" class="small-image" id="smallImage">
+    <div class="container">
+        <img src="images/invite.png" alt="Centered Image" id="centeredImage">
+        <div id="overlay-text">
+            Memory (the deliberate act of remembering) is a form of willed creation. It is not an effort to find out the way it really was — that is research. 
+            The point is to dwell on the way it appeared and why it appeared in that particular way.
+            <br><br>
+            I once knew a woman named Hannah Peace. I say knew, but nothing could be less accurate. I was perhaps four years old when she was in the town 
+            where I lived. I don't know where or even if she is now, or to whom she was related then. She was not even a visiting friend. 
+            I couldn't describe her in a way that would make her known in a photograph, nor would I recognize her if she walked into this room. 
+            But I have a memory of her, and it's like this: the color of her skin - the mat quality of it.
+            Something purple around her. Also eyes not completely open. There emanated from her an aloofness that seemed to me kindly disposed. 
+            But most of all I remember her name - or the way people pronounced it. Never Hannah or Miss Peace. Always Hannah Peace. 
+            And more: something hidden - some awe perhaps, but certainly some forgiveness. When they pronounced her name they (the women and the men) 
+            forgave her something.
+            <br><br>
+            The pieces (and only the pieces) are what begin the creative process for me.
+            And the process by which the recollections of these pieces coalesce into a part
+            (and knowing the difference between a piece and a part) is creation. Memory,
+            then, no matter how small the piece remembered, demands my respect, my
+            attention, and my trust.
+            <br><br>
+            I depend heavily on the ruse of memory (and in a way it does function as a creative writer's ruse) for two reasons. 
+            One, because it ignites some process of invention, and two, because I cannot trust the literature and the sociology of
+            other people to help me know the truth ofmy own cultural sources. It also
+            prevents my preoccupations from descending into sociology.
+            <br><br>
+            There may be play and arbitrariness in the way memory surfaces, but none in the way the composition is organized, 
+            especially when I hope to recreate play and arbitrariness in the way narrative events unfold. The form becomes
+            the exact interpretation of the idea the story is meant to express. There is nothing more traditional than that - 
+            but the sources of the images are not the traditional novelistic or readerly ones.
+            <br><br>
+            My compact with the reader is not to reveal an already established reality
+            (literary or historical) that he or she and I agree upon beforehand. I don't
+            want to assume or exercise that kind ofauthority. I regard that as patronizing,
+            although many people regard it as safe and reassuring. And because my
+            metier is Black, the artistic demands of Black culture are such that I cannot
+            patronize, control, or pontificate. In the Third World cosmology as I perceive
+            it, reality is not already constituted by my literary predecessors in
+            Western culture. If my work is to confront a reality unlike that received
+            reality of the West, it must centralize and animate information discredited
+            by the West- discredited not because it is not true or useful or even of some
+            racial value, but because it is information held by discredited people, information
+            dismissed as "lore" or "gossip" or "magic" or "sentiment."
+            <br><br>
+            <i>Toni Morrisson</i>, Memory, Creation, and Writing
+        </div>
+    </div>
+
+    <script>
+        // Get references to the small image, centered image, and overlay text
+        const smallImage = document.getElementById('smallImage');
+        const centeredImage = document.getElementById('centeredImage');
+        const overlayText = document.getElementById('overlay-text');
+
+        // Add click event listener to the small image
+        smallImage.addEventListener('click', function() {
+            // Toggle the display of the overlay text
+            overlayText.style.display = (overlayText.style.display === 'none' || overlayText.style.display === '') ? 'block' : 'none';
+            // Toggle the display of the centered image
+            centeredImage.style.display = (overlayText.style.display === 'none') ? 'block' : 'none';
+            // Toggle the scrollable class on the body
+            document.body.classList.toggle('scrollable', overlayText.style.display !== 'none');
+        });
+    </script>
+</body>
+</html>
